@@ -644,7 +644,7 @@ export declare interface IMediaInstance {
     on(event: 'pause', fn: (paused: boolean) => void, context?: any): this;
     on(event: 'progress', fn: (progress: number, duration: number) => void, context?: any): this;
     on(event: 'resumed' | 'paused' | 'start' | 'end' | 'stop', fn: () => void, context?: any): this;
-    off(event: 'resumed' | 'paused' | 'start' | 'end' | 'progress' | 'pause' | 'stop', fn: Function, context?: any, once?: boolean): this;
+    off(event: 'resumed' | 'paused' | 'start' | 'end' | 'progress' | 'pause' | 'stop', fn?: (...args: any[]) => void, context?: any, once?: boolean): this;
     /**
      * Fired when the sound when progress updates.
      * @param {string} name - Name of property, like 'speed', 'volume', 'muted', 'loop', 'paused'
