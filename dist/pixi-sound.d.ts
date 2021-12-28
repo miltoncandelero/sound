@@ -266,6 +266,7 @@ export declare const filters: {
     StereoFilter: typeof StereoFilter;
     ReverbFilter: typeof ReverbFilter;
     MonoFilter: typeof MonoFilter;
+    StreamFilter: typeof StreamFilter;
     TelephoneFilter: typeof TelephoneFilter;
 };
 
@@ -738,7 +739,7 @@ export declare interface Options {
      * If sound is already preloaded, available.
      * @type {ArrayBuffer|HTMLAudioElement}
      */
-    source?: ArrayBuffer | HTMLAudioElement;
+    source?: ArrayBuffer | AudioBuffer | HTMLAudioElement;
     /**
      * The map of sprite data. Where a sprite is an object
      * with a `start` and `end`, which are the times in seconds. Optionally, can include
@@ -1005,11 +1006,11 @@ export declare class Sound {
     private _speed;
     /**
      * Create a new sound instance from source.
-     * @param {ArrayBuffer|String|Options|HTMLAudioElement} options - Either the path or url to the source file.
+     * @param {ArrayBuffer|AudioBuffer|String|Options|HTMLAudioElement} options - Either the path or url to the source file.
      *        or the object of options to use.
      * @return Created sound instance.
      */
-    static from(source: string | Options | ArrayBuffer | HTMLAudioElement): Sound;
+    static from(source: string | Options | ArrayBuffer | HTMLAudioElement | AudioBuffer): Sound;
     /**
      * Use `Sound.from`
      * @ignore
@@ -1546,6 +1547,19 @@ declare class StereoFilter extends Filter {
 }
 
 /**
+ * Export a MediaStream to be recorded
+ *
+ * @class
+ * @memberof filters
+ */
+declare class StreamFilter extends Filter {
+    private _stream;
+    constructor();
+    get stream(): MediaStream;
+    destroy(): void;
+}
+
+/**
  * Creates a telephone-sound filter.
  *
  * @class
@@ -1888,7 +1902,7 @@ declare class WebAudioMedia implements IMedia {
      * The file buffer to load.
      * @readonly
      */
-    source: ArrayBuffer;
+    source: ArrayBuffer | AudioBuffer;
     /**
      * Instance of the chain builder.
      * @type {webaudio.WebAudioNodes}

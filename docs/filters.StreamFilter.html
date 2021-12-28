@@ -1568,7 +1568,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="SourceClone.html">Interface: SourceClone</h1>
+        <h1 class="page-title" data-filename="filters.StreamFilter.html">Class: StreamFilter</h1>
         
 
 
@@ -1577,13 +1577,14 @@
 <header>
   <div class="header content-size">
       <h2>
-        SourceClone
+        
+          <span class="ancestors"><a href=filters.html>filters</a></span>.StreamFilter
 
         
       </h2>
 
       
-          <div class="class-description"><p>Output for cloning source node.</p></div>
+          <div class="class-description"><p>Export a MediaStream to be recorded</p></div>
       
       
   </div>
@@ -1592,93 +1593,10 @@
 <article class="content-size">
     <div class="container-overview">
         
+        
 
         
 <dl class="details">
-    
-
-        <h5 class="subsection-title">Properties:</h5>
-
-        
-        <dl>
-
-<table class="properties">
-    <thead>
-    <tr>
-        
-            <th>Name</th>
-        
-
-        
-          <th>Type</th>
-        
-
-        
-        
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>gain</code></td>
-            
-
-            
-                <td class="type">
-                
-                    GainNode
-                
-                </td>
-            
-
-            
-
-            
-
-            
-
-            <td class="description last">
-                <p>Independent volume control</p>
-
-                
-            </td>
-        </tr>
-    
-
-        <tr>
-            
-                <td class="name"><code>source</code></td>
-            
-
-            
-                <td class="type">
-                
-                    AudioBufferSourceNode
-                
-                </td>
-            
-
-            
-
-            
-
-            
-
-            <td class="description last">
-                <p>Cloned audio buffer source</p>
-
-                
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-</dl>
     
 
     
@@ -1706,6 +1624,15 @@
         
     </div>
 
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        <ul>
+          
+
+            <li><a href=filters.Filter.html>filters.Filter</a></li>
+          
+        </ul>
     
 
     
@@ -1729,10 +1656,10 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="gain">
-            <a class="share-icon" href="#gain"><span class="glyphicon glyphicon-link"></span></a>
-            <span class="">gain</span>
-            <span class="type-signature type">GainNode</span>
+        <h4 class="name" id="stream">
+            <a class="share-icon" href="#stream"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">stream</span>
+            <span class="type-signature"></span>
             
             
             
@@ -1742,10 +1669,6 @@
 </dt>
 <dd>
     
-    
-    <div class="description">
-        <p>Independent volume control</p>
-    </div>
     
 
     
@@ -1778,15 +1701,96 @@
 </dd>
 
         
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div>
+    <h3 class="subsection-title">Inherited Properties</h3>
+
+    
+        
+
+<div class="panel collapsible-group-container">
+    <section class="panel-heading collapsible-group-header">
+        <a class="btn" role="button" data-toggle="collapse" href="#10">
+            <img src="icons/chevron-down.svg" />
+        </a>
+        <h4>From class <a href="filters.Filter.html">filters.Filter</a></h4>
+    </section>
+    <section class="panel-collapse collapse in" id="10">
+        <section class="panel-body collapsible-group-body">
             
+                
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="destination">
+            <a class="share-icon" href="#destination"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">destination</span>
+            <span class="type-signature type">AudioNode</span>
+            
+            
+            
+                <span class="access-signature inherited"><a href="filters.Filter.html#destination">inherited</a></span>
+            
+            
+        </h4>
+    </div>
+</dt>
+<dd>
+    
+      <p class="description"><p>The node to connect for the filter to the previous filter.</p></p>
+    
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+</dd>
+
+            
+                
 <dt>
     <div class="nameContainer">
         <h4 class="name" id="source">
             <a class="share-icon" href="#source"><span class="glyphicon glyphicon-link"></span></a>
             <span class="">source</span>
-            <span class="type-signature type">AudioBufferSourceNode</span>
+            <span class="type-signature type">AudioNode</span>
             
             
+            
+                <span class="access-signature inherited"><a href="filters.Filter.html#source">inherited</a></span>
             
             
         </h4>
@@ -1794,10 +1798,8 @@
 </dt>
 <dd>
     
+      <p class="description"><p>The node to connect for the filter to the previous filter.</p></p>
     
-    <div class="description">
-        <p>Cloned audio buffer source</p>
-    </div>
     
 
     
@@ -1829,7 +1831,118 @@
     
 </dd>
 
+            
+        </section>
+    </section>
+</div>
+
+    
+</div>
+
+    
+
+    
+        <div>
+    <h3 class="subsection-title">Inherited Methods</h3>
+
+    
         
+
+<div class="panel collapsible-group-container">
+    <section class="panel-heading collapsible-group-header">
+        <a class="btn" role="button" data-toggle="collapse" href="#11">
+            <img src="icons/chevron-down.svg" />
+        </a>
+        <h4>From class <a href="filters.Filter.html">filters.Filter</a></h4>
+    </section>
+    <section class="panel-collapse collapse in" id="11">
+        <section class="panel-body collapsible-group-body">
+            
+                
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="connect">
+            <a class="share-icon" href="#connect"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+              
+                  connect
+              
+            </span>
+            <span class="signature">(destination)</span><span class="type-signature"> void</span>
+            
+            
+            
+                <span class="access-signature inherited"><a href="filters.Filter.html#connect">inherited</a></span>
+            
+            
+        </h4>
+
+        
+    </div>
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Connect to the destination.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+            <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>destination</code></td>
+            
+
+            <td class="type">
+            
+                AudioNode
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The destination node to connect the output to</p>
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
     
 
     
@@ -1841,6 +1954,350 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="destroy">
+            <a class="share-icon" href="#destroy"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+              
+                  destroy
+              
+            </span>
+            <span class="signature">()</span><span class="type-signature"> void</span>
+            
+            
+            
+                <span class="access-signature inherited"><a href="filters.Filter.html#destroy">inherited</a></span>
+            
+            
+        </h4>
+
+        
+    </div>
+</dt>
+<dd>
+    
+      <p class="description"><p>Destroy the filter and don't use after this.</p></p>
+    
+    
+
+    
+
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="disconnect">
+            <a class="share-icon" href="#disconnect"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+              
+                  disconnect
+              
+            </span>
+            <span class="signature">()</span><span class="type-signature"> void</span>
+            
+            
+            
+                <span class="access-signature inherited"><a href="filters.Filter.html#disconnect">inherited</a></span>
+            
+            
+        </h4>
+
+        
+    </div>
+</dt>
+<dd>
+    
+      <p class="description"><p>Completely disconnect filter from destination and source nodes.</p></p>
+    
+    
+
+    
+
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="init">
+            <a class="share-icon" href="#init"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+              
+                  init
+              
+            </span>
+            <span class="signature">(destination, source)</span><span class="type-signature"> void</span>
+            
+            
+            
+                <span class="access-signature inherited"><a href="filters.Filter.html#init">inherited</a></span>
+            
+            
+        </h4>
+
+        
+    </div>
+</dt>
+<dd>
+    
+      <p class="description"><p>Reinitialize</p></p>
+    
+    
+
+    
+
+    
+
+    
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+            <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+            <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>destination</code></td>
+            
+
+            <td class="type">
+            
+                AudioNode
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                AudioNode
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+        </section>
+    </section>
+</div>
+
+    
+</div>
 
     
 
