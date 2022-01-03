@@ -243,8 +243,8 @@ export declare class Filterable {
      */
     private _filters;
     /**
-     * @param {AudioNode} source - The source audio node
-     * @param {AudioNode} destination - The output audio node
+     * @param {AudioNode} input - The source audio node
+     * @param {AudioNode} output - The output audio node
      */
     constructor(input: AudioNode, output: AudioNode);
     /** The destination output audio node */
@@ -754,7 +754,7 @@ export declare interface Options {
 /**
  * Create a new "Audio" stream based on given audio path and project uri; returns the audio object.
  * @static
- * @param fileName - Full path of the file to play.
+ * @param url - Full path of the file to play.
  * @param {Function} callback - Callback when complete.
  * @return New audio element alias.
  */
@@ -970,8 +970,8 @@ export declare class Sound {
      */
     private _instances;
     /**
-     * Reference to the sound context.
-     * @type {SoundContext}
+     * The user defined sound sprites
+     * @type {SoundSprites}
      */
     private _sprites;
     /**
@@ -1006,7 +1006,7 @@ export declare class Sound {
     private _speed;
     /**
      * Create a new sound instance from source.
-     * @param {ArrayBuffer|AudioBuffer|String|Options|HTMLAudioElement} options - Either the path or url to the source file.
+     * @param {ArrayBuffer|AudioBuffer|String|Options|HTMLAudioElement} source - Either the path or url to the source file.
      *        or the object of options to use.
      * @return Created sound instance.
      */
@@ -1057,10 +1057,10 @@ export declare class Sound {
     /**
      * Convenience method to add more than one sprite add a time.
      * @param {Object} data - Map of sounds to add where the key is the alias,
-     *        and the data are configuration options, see {@link Sound#addSprite} for info on data.
+     *        and the data are configuration options.
      * @return The map of sound sprites added.
      */
-    addSprites(sprites: SoundSpriteDataMap): SoundSprites;
+    addSprites(data: SoundSpriteDataMap): SoundSprites;
     /** Destructor, safer to use `SoundLibrary.remove(alias)` to remove this sound. */
     destroy(): void;
     /**
@@ -1092,7 +1092,8 @@ export declare class Sound {
      * Plays the sound.
      * @method play
      * @instance
-     * @param {Function|PlayOptions} options - Either completed function or play options.
+     * @param {Function|PlayOptions} source - Either completed function or play options.
+     * @param {Function} callback - Callback when completed.
      * @return The sound instance,
      *        this cannot be reused after it is done playing. Returns a Promise if the sound
      *        has not yet loaded.
@@ -1227,15 +1228,15 @@ export declare class SoundLibrary {
     /**
      * Adds a new sound by alias.
      * @param alias - The sound alias reference.
-     * @param {ArrayBuffer|String|Options|HTMLAudioElement} options - Either the path or url to the source file.
+     * @param {ArrayBuffer|AudioBuffer|String|Options|HTMLAudioElement} options - Either the path or url to the source file.
      *        or the object of options to use.
      * @return Instance of the Sound object.
      */
-    add(alias: string, options: Options | string | ArrayBuffer | HTMLAudioElement | Sound): Sound;
+    add(alias: string, options: Options | string | ArrayBuffer | AudioBuffer | HTMLAudioElement | Sound): Sound;
     /**
      * Adds multiple sounds at once.
      * @param map - Map of sounds to add, the key is the alias, the value is the
-     *        `string`, `ArrayBuffer`, `HTMLAudioElement` or the list of options
+     *        `string`, `ArrayBuffer`, `AudioBuffer`, `HTMLAudioElement` or the list of options
      *        (see {@link Options} for full options).
      * @param globalOptions - The default options for all sounds.
      *        if a property is defined, it will use the local property instead.
@@ -1317,6 +1318,7 @@ export declare class SoundLibrary {
     /**
      * Checks if a sound by alias exists.
      * @param alias - Check for alias.
+     * @param assert - Whether enable console.assert.
      * @return true if the sound exists.
      */
     exists(alias: string, assert?: boolean): boolean;
@@ -1413,7 +1415,7 @@ export declare type SoundMap = {
 };
 
 export declare type SoundSourceMap = {
-    [id: string]: Options | string | ArrayBuffer | HTMLAudioElement;
+    [id: string]: Options | string | ArrayBuffer | AudioBuffer | HTMLAudioElement;
 };
 
 /**
@@ -1729,7 +1731,6 @@ declare class WebAudioContext extends Filterable implements IMediaContext {
  * A single play instance that handles the AudioBufferSourceNode.
  * @class
  * @memberof webaudio
- * @param {SoundNodes} source - Reference to the SoundNodes.
  */
 declare class WebAudioInstance extends EventEmitter implements IMediaInstance {
     /**
@@ -1984,7 +1985,7 @@ declare class WebAudioNodes extends Filterable {
      */
     private _script;
     /**
-     * @param {webaudio.WebAudioContext} audioContext - The audio context.
+     * @param {webaudio.WebAudioContext} context - The audio context.
      */
     constructor(context: WebAudioContext);
     /**
